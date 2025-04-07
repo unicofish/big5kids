@@ -1,0 +1,716 @@
+<!DOCTYPE html><html lang="ru"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Большая пятерка для детей: познайте уникальность вашего ребенка</title>
+    <link href="css/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f7 100%);
+            color: #2d3748;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 2px dashed #cbd5e0;
+        }
+        
+        .trait-card {
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .trait-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .trait-card-content {
+            height: 0;
+            overflow: hidden;
+            transition: height 0.3s ease;
+        }
+        
+        .trait-card.active .trait-card-content {
+            height: auto;
+            padding: 1rem;
+        }
+        
+        .benefit-item {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+        
+        .benefit-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .custom-button {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border-radius: 30px;
+            padding: 12px 30px;
+            color: white;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4);
+        }
+        
+        .custom-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.6);
+        }
+        
+        .child-bg {
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .trait-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+        
+        .quote {
+            position: relative;
+            padding: 20px;
+            border-radius: 12px;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .quote::before {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            left: 10px;
+            top: -15px;
+            color: rgba(99, 179, 237, 0.3);
+        }
+        
+        .quote::after {
+            content: '"';
+            font-size: 60px;
+            position: absolute;
+            right: 10px;
+            bottom: -50px;
+            color: rgba(99, 179, 237, 0.3);
+        }
+        
+        .step-item {
+            position: relative;
+        }
+        
+        .step-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: -50%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #63b3ed, #faf089);
+        }
+        
+        @media (max-width: 768px) {
+            .step-item:not(:last-child)::after {
+                display: none;
+            }
+        }
+        
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0.7;
+            font-size: 14px;
+            color: #4a5568;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Титульный слайд -->
+    <section class="slide bg-gradient-to-br from-blue-100 to-green-100 relative">
+        <div class="logo">
+            <span>MAIN EXPERTS</span>
+        </div>
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">
+                Большая пятерка для детей
+            </h1>
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-gray-700">Познайте уникальную личность вашего ребенка</h2>
+            
+            <div class="flex justify-center">
+                <div class="w-full md:w-3/4 lg:w-2/3 relative">
+                    <div class="bg-white rounded-2xl p-6 shadow-xl">
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="w-full md:w-1/2 mb-6 md:mb-0">
+                                <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2274&q=80" alt="Школьники 9-12 лет" class="rounded-xl w-full h-auto shadow-md">
+                            </div>
+                            <div class="w-full md:w-1/2 md:pl-8">
+                                <p class="text-lg mb-4">Научно-обоснованный тест, который поможет:</p>
+                                <ul class="space-y-2">
+                                    <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Раскрыть сильные стороны ребенка</li>
+                                    <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Понять особенности его характера</li>
+                                    <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Выбрать оптимальный подход к воспитанию</li>
+                                    <li class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Помочь в развитии талантов</li>
+                                </ul>
+                                <div class="mt-4 bg-blue-100 rounded-xl p-3 text-center">
+                                    <p class="font-semibold text-blue-700">Для детей 9-12 лет</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Что такое "Большая пятерка" -->
+    <section class="slide bg-gradient-to-br from-yellow-50 to-orange-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center">Что такое <span class="text-yellow-600">"Большая пятерка"</span>?</h2>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 mb-6 md:mb-0">
+                        <div class="quote">
+                            <p class="text-lg italic mb-4">
+                                "Большая пятерка" - это современная и наиболее научно обоснованная модель личности, использующаяся психологами по всему миру.
+                            </p>
+                            <p class="text-right font-bold">- Консорциум психологов</p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-8">
+                        <p class="mb-4">Этот тест измеряет <span class="font-bold text-blue-600">5 базовых измерений</span> личности вашего ребенка:</p>
+                        <ul class="space-y-3">
+                            <li class="bg-blue-50 rounded-lg p-3 flex items-center">
+                                <i class="fas fa-comments text-blue-500 mr-3"></i>
+                                <span><b>Экстраверсия</b> - общительность и энергичность</span>
+                            </li>
+                            <li class="bg-green-50 rounded-lg p-3 flex items-center">
+                                <i class="fas fa-heart text-green-500 mr-3"></i>
+                                <span><b>Доброжелательность</b> - забота о других и эмпатия</span>
+                            </li>
+                            <li class="bg-purple-50 rounded-lg p-3 flex items-center">
+                                <i class="fas fa-tasks text-purple-500 mr-3"></i>
+                                <span><b>Добросовестность</b> - организованность и ответственность</span>
+                            </li>
+                            <li class="bg-red-50 rounded-lg p-3 flex items-center">
+                                <i class="fas fa-balance-scale text-red-500 mr-3"></i>
+                                <span><b>Эмоциональная стабильность</b> - уравновешенность</span>
+                            </li>
+                            <li class="bg-yellow-50 rounded-lg p-3 flex items-center">
+                                <i class="fas fa-lightbulb text-yellow-500 mr-3"></i>
+                                <span><b>Открытость опыту</b> - любознательность и воображение</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Научная обоснованность -->
+    <section class="slide bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center">Научная <span class="text-indigo-600">обоснованность</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-flask text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Десятилетия исследований</h3>
+                    </div>
+                    <p>Модель "Большой пятерки" подтверждена сотнями научных исследований и является самой надежной системой оценки личности.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-child text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Адаптирован для детей</h3>
+                    </div>
+                    <p>Специальная детская версия учитывает особенности восприятия и когнитивного развития детей 9-12 лет.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-check-double text-purple-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Проверенная валидность</h3>
+                    </div>
+                    <p>Методика показывает высокую достоверность результатов при тестировании детей разного возраста и из разных культур.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-users text-yellow-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Мнение экспертов</h3>
+                    </div>
+                    <p>Одобрен консорциумом психологов, психиатров и педагогов как надежный инструмент для понимания детской личности.</p>
+                </div>
+            </div>
+            
+            <div class="mt-10 bg-white rounded-2xl p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-quote-left text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Экспертное заключение</h3>
+                </div>
+                <blockquote class="italic border-l-4 border-blue-500 pl-4">
+                    "Опросник «Большая пятёрка» для детей 9–12 лет является научно обоснованным, методологически грамотно разработанным инструментом, соответствующим современным представлениям о структуре личности детей."
+                    <footer class="text-right mt-2 font-semibold">— Консорциум специалистов по детской психологии</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5 черт личности -->
+    <section class="slide bg-gradient-to-br from-green-50 to-teal-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center">Пять ключевых черт <span class="text-teal-600">личности</span></h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Экстраверсия -->
+                <div class="trait-card bg-blue-100" onclick="toggleCard(this)">
+                    <div class="p-6">
+                        <div class="trait-icon bg-blue-500 text-white mb-4">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Экстраверсия</h3>
+                        <p class="text-center text-sm text-gray-600">Нажмите, чтобы узнать больше</p>
+                    </div>
+                    <div class="trait-card-content bg-white">
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Общительность и разговорчивость</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Энергичность и активность</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Лидерские качества</li>
+                            <li><i class="fas fa-check text-blue-500 mr-2"></i> Уверенность в новых ситуациях</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Доброжелательность -->
+                <div class="trait-card bg-green-100" onclick="toggleCard(this)">
+                    <div class="p-6">
+                        <div class="trait-icon bg-green-500 text-white mb-4">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Доброжелательность</h3>
+                        <p class="text-center text-sm text-gray-600">Нажмите, чтобы узнать больше</p>
+                    </div>
+                    <div class="trait-card-content bg-white">
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Сочувствие и понимание других</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Желание помогать и делиться</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Умение сотрудничать</li>
+                            <li><i class="fas fa-check text-green-500 mr-2"></i> Доверие к людям</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Добросовестность -->
+                <div class="trait-card bg-purple-100" onclick="toggleCard(this)">
+                    <div class="p-6">
+                        <div class="trait-icon bg-purple-500 text-white mb-4">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Добросовестность</h3>
+                        <p class="text-center text-sm text-gray-600">Нажмите, чтобы узнать больше</p>
+                    </div>
+                    <div class="trait-card-content bg-white">
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Организованность и аккуратность</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Ответственность и надежность</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Целеустремленность</li>
+                            <li><i class="fas fa-check text-purple-500 mr-2"></i> Самоконтроль</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Эмоциональная стабильность -->
+                <div class="trait-card bg-red-100" onclick="toggleCard(this)">
+                    <div class="p-6">
+                        <div class="trait-icon bg-red-500 text-white mb-4">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Эмоциональная стабильность</h3>
+                        <p class="text-center text-sm text-gray-600">Нажмите, чтобы узнать больше</p>
+                    </div>
+                    <div class="trait-card-content bg-white">
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Спокойствие в стрессовых ситуациях</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Уверенность в себе</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Устойчивость настроения</li>
+                            <li><i class="fas fa-check text-red-500 mr-2"></i> Способность справляться с тревогой</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Открытость опыту -->
+                <div class="trait-card bg-yellow-100" onclick="toggleCard(this)">
+                    <div class="p-6">
+                        <div class="trait-icon bg-yellow-500 text-white mb-4">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-center mb-2">Открытость опыту</h3>
+                        <p class="text-center text-sm text-gray-600">Нажмите, чтобы узнать больше</p>
+                    </div>
+                    <div class="trait-card-content bg-white">
+                        <ul class="space-y-2">
+                            <li><i class="fas fa-check text-yellow-500 mr-2"></i> Богатое воображение и фантазия</li>
+                            <li><i class="fas fa-check text-yellow-500 mr-2"></i> Любознательность и интерес к новому</li>
+                            <li><i class="fas fa-check text-yellow-500 mr-2"></i> Творческие способности</li>
+                            <li><i class="fas fa-check text-yellow-500 mr-2"></i> Любовь к исследованиям и экспериментам</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-10 bg-white rounded-2xl p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-teal-100 flex items-center justify-center mr-4">
+                        <i class="fas fa-info-circle text-teal-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Важно помнить</h3>
+                </div>
+                <p class="text-lg">Нет "хороших" или "плохих" черт - каждый уникальный профиль личности имеет свои сильные стороны и области для роста.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Преимущества теста -->
+    <section class="slide bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center">Какую <span class="text-purple-600">пользу</span> вы получите?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="benefit-item bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-brain text-blue-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Глубокое понимание ребенка</h3>
+                    </div>
+                    <p>Вы увидите целостную картину личности вашего ребенка и поймете, какие черты делают его уникальным.</p>
+                </div>
+                
+                <div class="benefit-item bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user-cog text-green-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Индивидуальный подход</h3>
+                    </div>
+                    <p>Результаты помогут вам адаптировать методы воспитания под уникальные особенности характера вашего ребенка.</p>
+                </div>
+                
+                <div class="benefit-item bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-star text-yellow-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Раскрытие потенциала</h3>
+                    </div>
+                    <p>Зная сильные стороны личности ребенка, вы сможете помочь ему развить свои таланты и реализовать потенциал.</p>
+                </div>
+                
+                <div class="benefit-item bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-shield-alt text-red-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Предотвращение проблем</h3>
+                    </div>
+                    <p>Вы сможете предвидеть потенциальные сложности в учебе и общении, связанные с особенностями характера.</p>
+                </div>
+                
+                <div class="benefit-item bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-comments text-purple-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Улучшение коммуникации</h3>
+                    </div>
+                    <p>Понимание личности ребенка поможет наладить более гармоничное общение и укрепить доверие в отношениях.</p>
+                </div>
+                
+                <div class="benefit-item bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-graduation-cap text-indigo-500 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Поддержка в учебе</h3>
+                    </div>
+                    <p>Вы узнаете, какой подход к обучению будет наиболее эффективен для вашего ребенка, учитывая его личностные особенности.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Как проходит тестирование -->
+    <section class="slide bg-gradient-to-br from-blue-50 to-cyan-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center">Как проходит <span class="text-cyan-600">тестирование</span>?</h2>
+            
+            <div class="flex flex-col justify-center items-center mb-12">
+                <div class="flex flex-col md:flex-row justify-center w-full max-w-4xl">
+                    <div class="step-item flex flex-col items-center text-center mb-8 md:mb-0 md:w-1/4">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-clipboard-list text-blue-500 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold mb-2">Шаг 1</h3>
+                        <p>Ребенок отвечает на простые вопросы (около 20 минут)</p>
+                    </div>
+                    
+                    <div class="step-item flex flex-col items-center text-center mb-8 md:mb-0 md:w-1/4">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-user-check text-green-500 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold mb-2">Шаг 2</h3>
+                        <p>Родители заполняют свою версию опросника</p>
+                    </div>
+                    
+                    <div class="step-item flex flex-col items-center text-center mb-8 md:mb-0 md:w-1/4">
+                        <div class="w-16 h-16 rounded-full bg-yellow-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-chart-pie text-yellow-500 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold mb-2">Шаг 3</h3>
+                        <p>Специалист обрабатывает результаты</p>
+                    </div>
+                    
+                    <div class="step-item flex flex-col items-center text-center md:w-1/4">
+                        <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-4">
+                            <i class="fas fa-file-alt text-purple-500 text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold mb-2">Шаг 4</h3>
+                        <p>Вы получаете подробный отчет и консультацию</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold mb-6 text-center">Что входит в отчет?</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-blue-50 rounded-xl p-4">
+                        <h4 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-chart-column text-blue-500 mr-2"></i>
+                            Личностный профиль
+                        </h4>
+                        <p>Детальное описание выраженности каждой из пяти черт личности вашего ребенка с визуальными графиками.</p>
+                    </div>
+                    
+                    <div class="bg-green-50 rounded-xl p-4">
+                        <h4 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-medal text-green-500 mr-2"></i>
+                            Сильные стороны
+                        </h4>
+                        <p>Описание основных талантов и преимуществ личности вашего ребенка.</p>
+                    </div>
+                    
+                    <div class="bg-yellow-50 rounded-xl p-4">
+                        <h4 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+                            Рекомендации родителям
+                        </h4>
+                        <p>Конкретные советы по воспитанию, общению и поддержке ребенка с учетом его личностных особенностей.</p>
+                    </div>
+                    
+                    <div class="bg-red-50 rounded-xl p-4">
+                        <h4 class="font-bold mb-2 flex items-center">
+                            <i class="fas fa-book text-red-500 mr-2"></i>
+                            Образовательные стратегии
+                        </h4>
+                        <p>Рекомендации по учебной поддержке, которая наиболее эффективна для вашего ребенка.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы родителей -->
+    <section class="slide bg-gradient-to-br from-indigo-50 to-purple-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-8 text-center">Что говорят <span class="text-indigo-600">родители</span>?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-blue-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Екатерина, мама Сережи (10 лет)</h3>
+                            <div class="flex text-yellow-400 mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="italic">"Тест помог мне понять, почему сын так увлечен творчеством и почему ему сложно долго концентрироваться на одной задаче. Теперь я знаю, как помогать ему в учебе, не ломая его индивидуальность."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-green-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Алексей, папа Кати (11 лет)</h3>
+                            <div class="flex text-yellow-400 mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="italic">"Я был удивлен, узнав, что моя дочь имеет такой высокий показатель добросовестности! Теперь я могу доверять ей более важные задачи и это укрепило нашу связь."</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-purple-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Мария, мама Андрея (9 лет)</h3>
+                            <div class="flex text-yellow-400 mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="italic">"Сын всегда был "сложным" ребенком. Тест показал высокий уровень эмоциональной чувствительности, и после консультации с психологом у нас появились стратегии, которые реально помогают!"</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-red-500"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-lg mb-2">Олег и Наталья, родители Ильи (12 лет)</h3>
+                            <div class="flex text-yellow-400 mb-2">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="italic">"Мы всегда спорили о том, как лучше воспитывать сына. Результаты теста дали нам объективную картину его личности, и теперь мы с женой находим общий язык в вопросах воспитания."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Призыв к действию -->
+    <section class="slide bg-gradient-to-br from-blue-100 to-indigo-100 relative">
+        <div class="logo">
+            <span>MAIN EXPERTS</span>
+        </div>
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Откройте для себя уникальную личность вашего ребенка</h2>
+            
+            <div class="max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-xl mb-8">
+                <h3 class="text-2xl font-bold mb-4">Что вы получите?</h3>
+                
+                <ul class="space-y-3 mb-8 text-left">
+                    <li class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <span>Полный отчет о личностном профиле ребенка</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <span>Индивидуальные рекомендации по воспитанию</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <span>Консультацию специалиста по результатам</span>
+                    </li>
+                    <li class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
+                            <i class="fas fa-check text-green-500"></i>
+                        </div>
+                        <span>Стратегии поддержки в учебе и развитии</span>
+                    </li>
+                </ul>
+                
+                <a href="https://main-experts.ru/account/user-tests" class="custom-button mx-auto flex items-center">
+                    <i class="fas fa-calendar-check mr-2"></i>
+                    Записаться на тестирование
+                </a>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-6 shadow-lg inline-block">
+                <p class="text-lg font-bold text-gray-700 mb-2">Остались вопросы?</p>
+                <p class="mb-3">Свяжитесь с нами для получения дополнительной информации</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 hover:bg-blue-200 transition-colors">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 hover:bg-green-200 transition-colors">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 hover:bg-purple-200 transition-colors">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleCard(card) {
+            if (card.classList.contains('active')) {
+                card.classList.remove('active');
+            } else {
+                // Close all other cards
+                const allCards = document.querySelectorAll('.trait-card');
+                allCards.forEach(c => c.classList.remove('active'));
+                
+                // Open this card
+                card.classList.add('active');
+            }
+        }
+    </script>
+
+</body></html>
